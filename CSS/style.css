@@ -1,0 +1,179 @@
+/* Define color variables for the theme */
+:root {
+    --bg-color: #1a1a2e;
+    --card-bg-color: #24243e;
+    --primary-color: #9a7bff;
+    --text-color: #e0e0e0;
+    --input-bg-color: #1f1f36;
+    --border-color: #4a4a6a;
+    --delete-color: #ff5c5c;
+}
+
+/* Basic reset and font setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main container for the app */
+.todo-app {
+    background-color: var(--card-bg-color);
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+/* Form styling */
+#task-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#task-form input {
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#task-form input:focus {
+    border-color: var(--primary-color);
+}
+
+#task-input {
+    flex-grow: 1; /* Allows the task input to take up available space */
+}
+
+#task-date {
+    width: 150px;
+}
+
+/* Style for the date picker icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* General button styling */
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.add-btn {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 24px;
+    padding: 0 18px;
+}
+
+.add-btn:hover {
+    background-color: #835fe2;
+}
+
+/* Control buttons (Filter, Delete All) */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+#filter-btn, #delete-all-btn {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+
+#delete-all-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Task list styling */
+#task-list {
+    list-style: none;
+}
+
+.task-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto; /* Task | Due Date | Status | Actions */
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.task-item .task-text,
+.task-item .task-due-date,
+.task-item .task-status {
+    font-size: 15px;
+}
+
+.task-actions button {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+.task-actions .delete-btn {
+    border-color: var(--delete-color);
+    color: var(--delete-color);
+}
+
+/* Utility class to hide elements */
+.hidden {
+    display: none !important;
+}
+
+/* "No task found" message */
+#no-tasks-msg {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+}

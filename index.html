@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="todo-app">
+        <h1>Nauval's Todo List</h1>
+
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Add a todo ..." autocomplete="off">
+            <input type="date" id="task-date">
+            <button type="submit" class="add-btn">+</button>
+        </form>
+
+        <div class="controls">
+            <button id="filter-btn">Filter</button>
+            <button id="delete-all-btn">Delete All</button>
+        </div>
+
+        <ul id="task-list">
+             </ul>
+        
+        <p id="no-tasks-msg" class="hidden">No task found</p>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
